@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travalapp/page/navpages/bar_item_page.dart';
+import 'package:travalapp/page/navpages/main_page.dart';
 import 'package:travalapp/page/welcome_page.dart';
 
 void main() {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: welcomepage(),
+      home: MainPage(),
     );
   }
 }
