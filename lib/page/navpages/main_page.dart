@@ -19,15 +19,26 @@ class _MainPageState extends State<MainPage> {
     Mypage(),
   ];
 
-  void onTap(int index) {}
+  int currentIndex = 0;
+  void onTap(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[0],
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 1,
+          unselectedFontSize: 0,
+          selectedFontSize: 0,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.blue,
+          onTap: onTap,
+          currentIndex: currentIndex,
           selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey.withOpacity(0.5),
+          unselectedItemColor: Color.fromARGB(255, 90, 70, 70).withOpacity(0.6),
           showUnselectedLabels: false,
           showSelectedLabels: false,
           elevation: 0,
